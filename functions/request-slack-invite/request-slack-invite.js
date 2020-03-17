@@ -1,5 +1,6 @@
 const { parse } = require('querystring');
 const axios = require("axios");
+const SLACK_LEGACY_TOKEN = "0XDIpiczRtixgLJozOlcRYvA"
 
 exports.handler = async (event, context) => {
   try {
@@ -10,7 +11,7 @@ exports.handler = async (event, context) => {
     const formData = parse(formString)
     const email = formData.email.trim();
     const baseURL = "https://slack.com/api/users.admin.invite"
-    const toSlack = `email=${encodeURIComponent(email)}&token=${process.env.SLACK_LEGACY_TOKEN}&set_active=true`;
+    const toSlack = `email=${encodeURIComponent(email)}&token=${SLACK_LEGACY_TOKEN}&set_active=true`;
     const response = await axios.get(`${baseURL}?${toSlack}`)
     console.log(response.data);
     if (response.status !== 200) {
