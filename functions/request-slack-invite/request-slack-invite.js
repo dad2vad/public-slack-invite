@@ -1,6 +1,6 @@
 const { parse } = require('querystring');
 const axios = require("axios");
-const SLACK_LEGACY_TOKEN = "0XDIpiczRtixgLJozOlcRYvA"
+const SLACK_LEGACY_TOKEN = "p5emJFuJU6QAr2gU89TkAFWd"
 
 exports.handler = async (event, context) => {
   try {
